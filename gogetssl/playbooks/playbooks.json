@@ -1,0 +1,1423 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "7fb2c28e-6457-45a7-a416-9171837e547b",
+      "@type": "WorkflowCollection",
+      "name": "Sample - GOGETSSL - 1.0.0",
+      "description": "GOGETSSL offers SSL/TLS certificates and digital security solutions to secure websites, emails, and networks. With this connector, users can enhance security, streamline certificate management, and ensure trusted encryption for online communications",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Gogetssl",
+        "GOGETSSL"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "0496173d-bcf9-401d-83fd-5edd5bb50af3",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Retrieve information about alternative domain names associated with a specific SSL/TLS certificate.",
+          "name": "Get Domain Alternative",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/a1719f9d-f5c8-4cb1-ad78-1a3e45d7f066",
+          "steps": [
+            {
+              "uuid": "a1719f9d-f5c8-4cb1-ad78-1a3e45d7f066",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e256ff7e-33e0-43e3-8c39-ddf44ba946c1",
+                "title": "GOGETSSL: Get Domain Alternative",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "90756fb2-551c-4db2-8655-bad506c28ba2",
+              "@type": "WorkflowStep",
+              "name": "Get Domain Alternative",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "get_domain_alternative",
+                "operationTitle": "Get Domain Alternative",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "e3cb6656-f08f-4f18-98a4-db0d811c91ec",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain Alternative",
+              "sourceStep": "/api/3/workflow_steps/a1719f9d-f5c8-4cb1-ad78-1a3e45d7f066",
+              "targetStep": "/api/3/workflow_steps/90756fb2-551c-4db2-8655-bad506c28ba2"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8a3dd506-2bd4-4f30-ab9a-9cde8d14cc68",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Retrieve email addresses associated with a specific domain.",
+          "name": "Get Domain Emails",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/67dd45d7-103d-4870-baaf-f25000c5c24d",
+          "steps": [
+            {
+              "uuid": "67dd45d7-103d-4870-baaf-f25000c5c24d",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "1748ff2f-980d-400d-8404-ffc112a103a8",
+                "title": "GOGETSSL: Get Domain Emails",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4e0e33ee-3da4-441b-a0ba-c9e427eda191",
+              "@type": "WorkflowStep",
+              "name": "Get Domain Emails",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "get_domain_emails",
+                "operationTitle": "Get Domain Emails",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "dcb426dd-8219-42be-84c6-51c78fffe338",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain Emails",
+              "sourceStep": "/api/3/workflow_steps/67dd45d7-103d-4870-baaf-f25000c5c24d",
+              "targetStep": "/api/3/workflow_steps/4e0e33ee-3da4-441b-a0ba-c9e427eda191"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "899c4239-283a-45f6-a41b-0e36d85de13d",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Retrieve email addresses associated with a domain specifically for GeoTrust SSL certificates.",
+          "name": "Get Domain Emails for Geo Trust",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/870254ea-aa52-4e6d-99c7-2643ff8c4c95",
+          "steps": [
+            {
+              "uuid": "870254ea-aa52-4e6d-99c7-2643ff8c4c95",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "93fddb4e-5ac3-406a-86f1-c77c2c5cce3e",
+                "title": "GOGETSSL: Get Domain Emails for Geo Trust",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "bb482452-6853-4a0a-a64b-188d50d93005",
+              "@type": "WorkflowStep",
+              "name": "Get Domain Emails for Geo Trust",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "get_domain_emails_for_geo_trust",
+                "operationTitle": "Get Domain Emails for Geo Trust",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "e442d18c-12f2-4ead-9148-46cf452eba82",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain Emails for Geo Trust",
+              "sourceStep": "/api/3/workflow_steps/870254ea-aa52-4e6d-99c7-2643ff8c4c95",
+              "targetStep": "/api/3/workflow_steps/bb482452-6853-4a0a-a64b-188d50d93005"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ed85d52e-e00e-4a83-b28b-e838a3e1f2f5",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Retrieve WHOIS information for a specific domain.",
+          "name": "Get Domain from Whois",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/a6faa5e7-4093-4bc2-9dbd-1b5ac550f03c",
+          "steps": [
+            {
+              "uuid": "a6faa5e7-4093-4bc2-9dbd-1b5ac550f03c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "5fe8a077-d56b-4217-9c23-2ef5f7a166f1",
+                "title": "GOGETSSL: Get Domain from Whois",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "13d76718-9c71-47e2-81e9-803bbc447adf",
+              "@type": "WorkflowStep",
+              "name": "Get Domain from Whois",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "get_domain_from_whois",
+                "operationTitle": "Get Domain from Whois",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "1a178d2b-47e6-430a-8c22-c163812e16e7",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain from Whois",
+              "sourceStep": "/api/3/workflow_steps/a6faa5e7-4093-4bc2-9dbd-1b5ac550f03c",
+              "targetStep": "/api/3/workflow_steps/13d76718-9c71-47e2-81e9-803bbc447adf"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5fd04d77-3abc-4ed4-82f6-1fbfe9cb8527",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Retrieve all products from GOGETSSL.",
+          "name": "Get All Products",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2f81821b-64eb-44ac-996b-dab826b8aac3",
+          "steps": [
+            {
+              "uuid": "2f81821b-64eb-44ac-996b-dab826b8aac3",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "53c16765-0994-4acb-9602-f5420607944d",
+                "title": "GOGETSSL: Get All Products",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "b077535b-ad72-4e77-a80f-044986af0768",
+              "@type": "WorkflowStep",
+              "name": "Get All Products",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "get_all_products",
+                "operationTitle": "Get All Products",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "4a3af1ac-ec78-42ee-9374-c4a8140b601d",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get All Products",
+              "sourceStep": "/api/3/workflow_steps/2f81821b-64eb-44ac-996b-dab826b8aac3",
+              "targetStep": "/api/3/workflow_steps/b077535b-ad72-4e77-a80f-044986af0768"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "3cc78bcf-80af-47bb-8ffe-a6999cd487f3",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Retrieving details of a specific product from GOGETSSL.",
+          "name": "Get Product Details",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/dc90f4a1-8050-4f32-a051-6f352c5dc0b6",
+          "steps": [
+            {
+              "uuid": "dc90f4a1-8050-4f32-a051-6f352c5dc0b6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "d27f2e7a-943e-456a-af9c-210d5add25b2",
+                "title": "GOGETSSL: Get Product Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4078664d-fd33-4447-8f5d-aad47d7ea70a",
+              "@type": "WorkflowStep",
+              "name": "Get Product Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "get_product_details",
+                "operationTitle": "Get Product Details",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "189f3ef5-97de-45c5-a920-b228eabd9bd1",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Product Details",
+              "sourceStep": "/api/3/workflow_steps/dc90f4a1-8050-4f32-a051-6f352c5dc0b6",
+              "targetStep": "/api/3/workflow_steps/4078664d-fd33-4447-8f5d-aad47d7ea70a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "072b5fd4-640d-4711-ab1b-95f2c92e067a",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Retrieves common details about the order's status and associated metadata, helping you track and manage your SSL certificate orders.",
+          "name": "Get Orders Metadata",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c09ea40f-3366-4d7c-9907-7b8dc3218167",
+          "steps": [
+            {
+              "uuid": "c09ea40f-3366-4d7c-9907-7b8dc3218167",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "905dab0d-5b37-4e28-9a72-1e256c61ed2e",
+                "title": "GOGETSSL: Get Orders Metadata",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "d0546e41-2001-4a2c-a90b-c9394b91b301",
+              "@type": "WorkflowStep",
+              "name": "Get Orders Metadata",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "get_orders_metadata",
+                "operationTitle": "Get Orders Metadata",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "074a77c0-1462-448f-9d8a-44c89b53ee77",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Orders Metadata",
+              "sourceStep": "/api/3/workflow_steps/c09ea40f-3366-4d7c-9907-7b8dc3218167",
+              "targetStep": "/api/3/workflow_steps/d0546e41-2001-4a2c-a90b-c9394b91b301"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8c751719-1143-4701-b5dc-737ab8eb1c10",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Retrieve comprehensive details about a specific SSL certificate order.",
+          "name": "Get Orders Details",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/261e19df-e885-4c23-a197-19d54eb26d7e",
+          "steps": [
+            {
+              "uuid": "261e19df-e885-4c23-a197-19d54eb26d7e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "bdd98aed-e512-4249-9c8f-e3003396df50",
+                "title": "GOGETSSL: Get Orders Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "b08e875c-9656-495a-bf65-a9dc310929ad",
+              "@type": "WorkflowStep",
+              "name": "Get Orders Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "get_orders_details",
+                "operationTitle": "Get Orders Details",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "90793d79-f9fd-4ef7-9e43-18d56331ffed",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Orders Details",
+              "sourceStep": "/api/3/workflow_steps/261e19df-e885-4c23-a197-19d54eb26d7e",
+              "targetStep": "/api/3/workflow_steps/b08e875c-9656-495a-bf65-a9dc310929ad"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d649bccf-e2ee-4585-97ab-77c67bdf8490",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Retrieve the status of all SSL certificate orders associated with your account.",
+          "name": "Get All Orders Status",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b42647f5-f762-4f5e-a487-dcb113346749",
+          "steps": [
+            {
+              "uuid": "b42647f5-f762-4f5e-a487-dcb113346749",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "2546fefc-ed9b-4e14-a842-e11f038bf856",
+                "title": "GOGETSSL: Get All Orders Status",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "5cf6d28f-52bf-4ed8-80e1-53288cd70e93",
+              "@type": "WorkflowStep",
+              "name": "Get All Orders Status",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "get_all_orders_status",
+                "operationTitle": "Get All Orders Status",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "4c9d7cf8-1f10-4c6b-822d-0bdad5e6aa73",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get All Orders Status",
+              "sourceStep": "/api/3/workflow_steps/b42647f5-f762-4f5e-a487-dcb113346749",
+              "targetStep": "/api/3/workflow_steps/5cf6d28f-52bf-4ed8-80e1-53288cd70e93"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "fa199b5e-2d7e-40eb-abe1-6f0eb2a06fa6",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Retrieves the total number of SSL certificate orders associated with your account.",
+          "name": "Get Total Order Count",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e4b8566d-b9a8-4387-b82f-da0b4fff5170",
+          "steps": [
+            {
+              "uuid": "e4b8566d-b9a8-4387-b82f-da0b4fff5170",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "1cb4c749-6f4c-442e-bef9-d0ef2de0513f",
+                "title": "GOGETSSL: Get Total Order Count",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "0e1b3fbe-8ad5-48e3-a796-e89e0df5c878",
+              "@type": "WorkflowStep",
+              "name": "Get Total Order Count",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "get_total_order_count",
+                "operationTitle": "Get Total Order Count",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "0c3cde11-1380-4c0c-a013-494075b455d2",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Total Order Count",
+              "sourceStep": "/api/3/workflow_steps/e4b8566d-b9a8-4387-b82f-da0b4fff5170",
+              "targetStep": "/api/3/workflow_steps/0e1b3fbe-8ad5-48e3-a796-e89e0df5c878"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9486b4b3-2608-4024-bac1-ea2eda85e2cd",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Generate a Certificate Signing Request (CSR) based on the provided parameter values.",
+          "name": "Generate CSR",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d7248ed5-1cdb-4f54-88f3-5a242bfe66ae",
+          "steps": [
+            {
+              "uuid": "d7248ed5-1cdb-4f54-88f3-5a242bfe66ae",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "40d1cc10-df91-404c-9a9b-a3b2d9cada66",
+                "title": "GOGETSSL: Generate CSR",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "f1d0f190-102d-4f5a-ba8c-a42489cf5221",
+              "@type": "WorkflowStep",
+              "name": "Generate CSR",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "generate_csr",
+                "operationTitle": "Generate CSR",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "7a9da4c4-d43d-4d10-b75e-54c232dbdb4d",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Generate CSR",
+              "sourceStep": "/api/3/workflow_steps/d7248ed5-1cdb-4f54-88f3-5a242bfe66ae",
+              "targetStep": "/api/3/workflow_steps/f1d0f190-102d-4f5a-ba8c-a42489cf5221"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "3abd40fe-ef91-4c82-99a3-233a01bfdb24",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Validate a Certificate Signing Request (CSR).",
+          "name": "Validate CSR",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8c2453e8-9466-4f4c-ab64-f4078f549d36",
+          "steps": [
+            {
+              "uuid": "8c2453e8-9466-4f4c-ab64-f4078f549d36",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "34f24537-d580-4d9a-9216-fb498a2968d9",
+                "title": "GOGETSSL: Validate CSR",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a2856262-6781-4ce1-88ee-f189c1277ae2",
+              "@type": "WorkflowStep",
+              "name": "Validate CSR",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "validate_csr",
+                "operationTitle": "Validate CSR",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "42c3df75-43c1-4d84-ab65-697776ba8a87",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Validate CSR",
+              "sourceStep": "/api/3/workflow_steps/8c2453e8-9466-4f4c-ab64-f4078f549d36",
+              "targetStep": "/api/3/workflow_steps/a2856262-6781-4ce1-88ee-f189c1277ae2"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "12384a04-18f0-43a9-bc5a-8bb34cda530a",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Decode a Certificate Signing Request (CSR).",
+          "name": "Decode CSR",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/572a8bfa-cbeb-4c8f-b241-c18473fc18e8",
+          "steps": [
+            {
+              "uuid": "572a8bfa-cbeb-4c8f-b241-c18473fc18e8",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "ad28061c-350f-456b-806f-b3360c4ca160",
+                "title": "GOGETSSL: Decode CSR",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "b6bbe6ae-e531-485d-bdcd-36aa561e48c5",
+              "@type": "WorkflowStep",
+              "name": "Decode CSR",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "decode_csr",
+                "operationTitle": "Decode CSR",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f7753d2d-be7b-49ca-a3f6-c6d1a5faa2dc",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Decode CSR",
+              "sourceStep": "/api/3/workflow_steps/572a8bfa-cbeb-4c8f-b241-c18473fc18e8",
+              "targetStep": "/api/3/workflow_steps/b6bbe6ae-e531-485d-bdcd-36aa561e48c5"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9f2baed0-9bbf-4b78-b5a4-6d48ba6f7130",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Add an SSL certificate order in GOGETSSL",
+          "name": "Add SSL Order",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4dc00ca9-2861-473a-aa3a-48335b0f03f0",
+          "steps": [
+            {
+              "uuid": "4dc00ca9-2861-473a-aa3a-48335b0f03f0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "68d13d44-0572-429a-973c-04733aea3ec4",
+                "title": "GOGETSSL: Add SSL Order",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "d96c1214-3e82-41f9-8de6-39a8b09fe443",
+              "@type": "WorkflowStep",
+              "name": "Add SSL Order",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "add_ssl_order",
+                "operationTitle": "Add SSL Order",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "80199510-fc4d-4a99-95ce-132824a84438",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add SSL Order",
+              "sourceStep": "/api/3/workflow_steps/4dc00ca9-2861-473a-aa3a-48335b0f03f0",
+              "targetStep": "/api/3/workflow_steps/d96c1214-3e82-41f9-8de6-39a8b09fe443"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "34fc299c-f76b-49fe-964b-1918cb190c64",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Request a reissue of an existing SSL certificate.",
+          "name": "Reissue SSL Order",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2d5b7c10-cf65-4cfb-893b-ed8d215176c9",
+          "steps": [
+            {
+              "uuid": "2d5b7c10-cf65-4cfb-893b-ed8d215176c9",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "530689cc-8f45-4721-9a8f-fef90240af76",
+                "title": "GOGETSSL: Reissue SSL Order",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "1e912b39-3015-49f0-9cee-e7dddd44ee66",
+              "@type": "WorkflowStep",
+              "name": "Reissue SSL Order",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "reissue_ssl_order",
+                "operationTitle": "Reissue SSL Order",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "439c597e-1593-45fa-8fc0-4e13fb343718",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Reissue SSL Order",
+              "sourceStep": "/api/3/workflow_steps/2d5b7c10-cf65-4cfb-893b-ed8d215176c9",
+              "targetStep": "/api/3/workflow_steps/1e912b39-3015-49f0-9cee-e7dddd44ee66"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f7c641b0-24a9-4b80-a24f-4707b495f8fd",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Renewal process for an existing SSL certificate.",
+          "name": "Add SSL Renew Order",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f9000653-b439-4460-a717-82e9f88b0c29",
+          "steps": [
+            {
+              "uuid": "f9000653-b439-4460-a717-82e9f88b0c29",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "05cb2d49-b5f7-4810-89c4-fbecdea3c6c4",
+                "title": "GOGETSSL: Add SSL Renew Order",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "f3f4ace5-5510-4d26-91bf-49be6b8aa7b9",
+              "@type": "WorkflowStep",
+              "name": "Add SSL Renew Order",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "add_ssl_renew_order",
+                "operationTitle": "Add SSL Renew Order",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "18912e64-a07a-43b7-952f-302b977c2593",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add SSL Renew Order",
+              "sourceStep": "/api/3/workflow_steps/f9000653-b439-4460-a717-82e9f88b0c29",
+              "targetStep": "/api/3/workflow_steps/f3f4ace5-5510-4d26-91bf-49be6b8aa7b9"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5c94d5a3-3307-4e56-9a75-484905d2398a",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Add an SSL certificate with Subject Alternative Names (SANs) to secure multiple domains or subdomains with a single certificate, ideal for Multi-Domain (MD) or Unified Communications (UCC) use.",
+          "name": "Add SSL SAN Order",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/769642c2-38ed-4824-97a4-f6042dc4b654",
+          "steps": [
+            {
+              "uuid": "769642c2-38ed-4824-97a4-f6042dc4b654",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "cb7c6991-8595-4c01-8165-728dbf13cbe8",
+                "title": "GOGETSSL: Add SSL SAN Order",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "b7fd7c70-6f47-41a2-9a4e-728e3845977a",
+              "@type": "WorkflowStep",
+              "name": "Add SSL SAN Order",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "add_ssl_san_order",
+                "operationTitle": "Add SSL SAN Order",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "2410b52d-305e-42a7-8936-97e780604534",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add SSL SAN Order",
+              "sourceStep": "/api/3/workflow_steps/769642c2-38ed-4824-97a4-f6042dc4b654",
+              "targetStep": "/api/3/workflow_steps/b7fd7c70-6f47-41a2-9a4e-728e3845977a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "915c27e3-1c93-49de-ae95-ceed7301003b",
+          "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
+          "triggerLimit": null,
+          "description": "Cancel a previously placed SSL certificate order.",
+          "name": "Cancel Order",
+          "tag": "#GOGETSSL",
+          "recordTags": [
+            "Gogetssl",
+            "GOGETSSL"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/db072ff6-784b-4a88-8cfe-b2dbb451abb6",
+          "steps": [
+            {
+              "uuid": "db072ff6-784b-4a88-8cfe-b2dbb451abb6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "ec4aaf66-54b0-490f-b0c5-5032aa68b26d",
+                "title": "GOGETSSL: Cancel Order",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ee7ff45c-ae83-4361-9523-10414e26610c",
+              "@type": "WorkflowStep",
+              "name": "Cancel Order",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GOGETSSL",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "GOGETSSL",
+                "operation": "cancel_order",
+                "operationTitle": "Cancel Order",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "1d368365-134a-4685-ae55-b0eaa512a192",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Cancel Order",
+              "sourceStep": "/api/3/workflow_steps/db072ff6-784b-4a88-8cfe-b2dbb451abb6",
+              "targetStep": "/api/3/workflow_steps/ee7ff45c-ae83-4361-9523-10414e26610c"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

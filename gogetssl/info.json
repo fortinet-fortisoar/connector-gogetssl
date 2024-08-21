@@ -1,0 +1,986 @@
+{
+  "name": "gogetssl",
+  "label": "GOGETSSL",
+  "version": "1.0.0",
+  "category": "Authentication",
+  "description": "GOGETSSL offers SSL/TLS certificates and digital security solutions to secure websites, emails, and networks. With this connector, users can enhance security, streamline certificate management, and ensure trusted encryption for online communications",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "contributor": "",
+  "publisher": "Fortinet",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "type": "text",
+        "description": "Specify the Rest API endpoint URL of the GOGETSSL server to connect and perform automated operations.",
+        "tooltip": "Specify the Rest API endpoint URL of the GOGETSSL server to connect and perform automated operations.",
+        "required": true,
+        "visible": true,
+        "editable": true
+      },
+      {
+        "title": "API Key",
+        "name": "api_key",
+        "type": "password",
+        "tooltip": "Specify the API key to access the GOGETSSL Rest API endpoint to which you will connect and perform the automated operations.",
+        "description": "Specify the API key to access the GOGETSSL Rest API endpoint to which you will connect and perform the automated operations.",
+        "required": false,
+        "visible": true,
+        "editable": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Get Domain Alternative",
+      "operation": "get_domain_alternative",
+      "description": "Retrieve information about alternative domain names associated with a specific SSL/TLS certificate.",
+      "category": "investigation",
+      "annotation": "get_domain_alternative",
+      "output_schema": {
+        "validation": {
+          "http": {
+            "http": {
+              "link": "",
+              "filename": "",
+              "content": ""
+            }
+          },
+          "dns": {
+            "dns": {
+              "record": ""
+            }
+          }
+        },
+        "success": ""
+      },
+      "parameters": [
+        {
+          "title": "Certificate Signing Request (CSR)",
+          "name": "csr",
+          "type": "textarea",
+          "description": "Provide Certificate Signing Request (CSR) is a block of encoded text used to retrieve information about alternative domain names associated with a specific SSL/TLS certificate.",
+          "tooltip": "Provide Certificate Signing Request (CSR) is a block of encoded text used to retrieve information about alternative domain names associated with a specific SSL/TLS certificate.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Domain Emails",
+      "operation": "get_domain_emails",
+      "description": "Retrieve email addresses associated with a specific domain.",
+      "category": "investigation",
+      "annotation": "get_domain_emails",
+      "output_schema": {
+        "validation": {
+          "http": {
+            "http": {
+              "link": "",
+              "filename": "",
+              "content": ""
+            }
+          },
+          "dns": {
+            "dns": {
+              "record": ""
+            }
+          }
+        },
+        "success": ""
+      },
+      "parameters": [
+        {
+          "title": "Domain",
+          "name": "domain",
+          "type": "text",
+          "description": "Specify the domain for which you want to retrieve associated email addresses.",
+          "tooltip": "Specify the domain for which you want to retrieve associated email addresses.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Domain Emails for Geo Trust",
+      "operation": "get_domain_emails_for_geo_trust",
+      "description": "Retrieve email addresses associated with a domain specifically for GeoTrust SSL certificates.",
+      "category": "investigation",
+      "annotation": "get_domain_emails_for_geo_trust",
+      "output_schema": {
+        "GeotrustApprovalEmails": [
+        ],
+        "success": ""
+      },
+      "parameters": [
+        {
+          "title": "Domain",
+          "name": "domain",
+          "type": "text",
+          "description": "Specify the domain for which you want to retrieve email addresses. These email addresses are relevant for GeoTrust SSL certificate validation.",
+          "tooltip": "Specify the domain for which you want to retrieve email addresses. These email addresses are relevant for GeoTrust SSL certificate validation.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Domain from Whois",
+      "operation": "get_domain_from_whois",
+      "description": "Retrieve WHOIS information for a specific domain.",
+      "category": "investigation",
+      "annotation": "get_domain_from_whois",
+      "output_schema": {
+        "ComodoApprovalEmails": [],
+        "GeotrustApprovalEmails": [],
+        "success": ""
+      },
+      "parameters": [
+        {
+          "title": "Domain",
+          "name": "domain",
+          "type": "text",
+          "description": "Specify the domain for which WHOIS information is requested.",
+          "tooltip": "Specify the domain for which WHOIS information is requested.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get All Products",
+      "operation": "get_all_products",
+      "description": "Retrieve all products from GOGETSSL.",
+      "category": "investigation",
+      "annotation": "get_all_products",
+      "output_schema": {
+        "products": [
+          {
+            "id": "",
+            "name": "",
+            "periods": [
+            ],
+            "organization": "",
+            "wildcard": "",
+            "unlimited_servers": "",
+            "is_multidomain": "",
+            "wildcard_san_enabled": "",
+            "multidomains_included": "",
+            "single_san_included": "",
+            "wildcard_san_included": "",
+            "multidomains_maximum": "",
+            "dcv_email": "",
+            "dcv_dns": "",
+            "dcv_http": "",
+            "dcv_https": "",
+            "recheck_caa": ""
+          }
+        ]
+      },
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "title": "Get Product Details",
+      "operation": "get_product_details",
+      "description": "Retrieving details of a specific product from GOGETSSL.",
+      "category": "investigation",
+      "annotation": "get_product_details",
+      "output_schema": {
+        "products": [
+          {
+            "id": "",
+            "name": "",
+            "periods": [
+            ],
+            "organization": "",
+            "wildcard": "",
+            "unlimited_servers": "",
+            "is_multidomain": "",
+            "wildcard_san_enabled": "",
+            "multidomains_included": "",
+            "single_san_included": "",
+            "wildcard_san_included": "",
+            "multidomains_maximum": "",
+            "dcv_email": "",
+            "dcv_dns": "",
+            "dcv_http": "",
+            "dcv_https": "",
+            "recheck_caa": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Product ID",
+          "name": "product_id",
+          "type": "text",
+          "description": "Specify the ID of the product which you want to retrieve information of product.",
+          "tooltip": "Specify the ID of the product which you want to retrieve information of product.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Orders Metadata",
+      "operation": "get_orders_metadata",
+      "description": "Retrieves common details about the order's status and associated metadata, helping you track and manage your SSL certificate orders.",
+      "category": "investigation",
+      "annotation": "get_orders_metadata",
+      "output_schema": [
+        {
+          "order_id": "",
+          "status": "",
+          "valid_from": "",
+          "valid_till": "",
+          "common_name": ""
+        }
+      ],
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "title": "Get Orders Details",
+      "operation": "get_orders_details",
+      "description": "Retrieve comprehensive details about a specific SSL certificate order.",
+      "category": "investigation",
+      "annotation": "get_orders_details",
+      "output_schema": {
+        "order_id": "",
+        "partner_order_id": "",
+        "internal_id": "",
+        "status": "",
+        "status_description": "",
+        "dcv_status": "",
+        "product_id": "",
+        "domain": "",
+        "total_domains": "",
+        "base_domain_count": "",
+        "single_san_count": "",
+        "wildcard_san_count": "",
+        "approver_method": {
+          "http": {
+            "link": "",
+            "filename": "",
+            "content": ""
+          }
+        },
+        "domains": "",
+        "validity_period": "",
+        "valid_from": "",
+        "valid_till": "",
+        "begin_date": "",
+        "end_date": "",
+        "csr_code": "",
+        "crt_code": "",
+        "ca_code": "",
+        "server_count": "",
+        "reissue": "",
+        "reissue_now": "",
+        "renew": "",
+        "webserver_type": "",
+        "upgrade": "",
+        "approver_emails": "",
+        "dcv_method": "",
+        "admin_addressline1": "",
+        "admin_addressline2": "",
+        "admin_city": "",
+        "admin_country": "",
+        "admin_fax": "",
+        "admin_phone": "",
+        "admin_postalcode": "",
+        "admin_region": "",
+        "admin_email": "",
+        "admin_firstname": "",
+        "admin_lastname": "",
+        "admin_organization": "",
+        "admin_title": "",
+        "org_addressline3": "",
+        "org_city": "",
+        "org_country": "",
+        "org_fax": "",
+        "org_phone": "",
+        "org_postalcode": "",
+        "org_region": "",
+        "tech_organization": "",
+        "tech_addressline1": "",
+        "tech_addressline2": "",
+        "tech_addressline3": "",
+        "tech_city": "",
+        "tech_country": "",
+        "tech_fax": "",
+        "tech_phone": "",
+        "tech_postalcode": "",
+        "tech_region": "",
+        "tech_email": "",
+        "tech_firstname": "",
+        "tech_lastname": "",
+        "tech_title": "",
+        "ssl_price": "",
+        "ssl_period": "",
+        "manual_check": "",
+        "pre_signing": "",
+        "admin_msg": "",
+        "free_ev_upgrade": "",
+        "codesigning_inviteurl": "",
+        "validation_description": "",
+        "san": [
+          {
+            "san_name": "",
+            "validation_method": "",
+            "status": "",
+            "status_description": "",
+            "validation": {
+              "http": {
+                "link": "",
+                "filename": "",
+                "content": ""
+              }
+            }
+          }
+        ],
+        "success": true,
+        "time_stamp": 1563873515
+      },
+      "parameters": [
+        {
+          "title": "Order ID",
+          "name": "order_id",
+          "type": "text",
+          "description": "Specify the order ID for which you want to retrieve detailed information.",
+          "tooltip": "Specify the order ID for which you want to retrieve detailed information.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get All Orders Status",
+      "operation": "get_all_orders_status",
+      "description": "Retrieve the status of all SSL certificate orders associated with your account.",
+      "category": "investigation",
+      "annotation": "get_all_orders_status",
+      "output_schema": [
+        {
+          "order_id": "",
+          "status": "",
+          "expires": ""
+        }
+      ],
+      "parameters": [
+        {
+          "title": "CIDs",
+          "name": "cids",
+          "type": "text",
+          "description": "Specify the CSV of CIDs for which you want to retrieve detailed information.",
+          "tooltip": "Specify the CSV of CIDs for which you want to retrieve detailed information.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Total Order Count",
+      "operation": "get_total_order_count",
+      "description": "Retrieves the total number of SSL certificate orders associated with your account.",
+      "category": "investigation",
+      "annotation": "get_total_order_count",
+      "output_schema": {
+        "total_orders": "",
+        "success": ""
+      },
+      "parameters": [
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Generate CSR",
+      "operation": "generate_csr",
+      "description": "Generate a Certificate Signing Request (CSR) based on the provided parameter values.",
+      "category": "investigation",
+      "annotation": "generate_csr",
+      "output_schema": {
+        "csr_code": "",
+        "csr_key": "",
+        "success": ""
+      },
+      "parameters": [
+        {
+          "title": "Common Name",
+          "name": "csr_commonname",
+          "type": "text",
+          "description": "Specify the fully qualified domain name (FQDN) that you want the certificate.",
+          "tooltip": "Specify the fully qualified domain name (FQDN) that you want the certificate.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Organization Name",
+          "name": "csr_organization",
+          "type": "text",
+          "description": "Specify the name of your organization.",
+          "tooltip": "Specify the name of your organization.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Department",
+          "name": "csr_department",
+          "type": "text",
+          "description": "Specify the division or department within your organization.",
+          "tooltip": "Specify the division or department within your organization.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "City",
+          "name": "csr_city",
+          "type": "text",
+          "description": "Specify the city where your organization is located.",
+          "tooltip": "Specify the city where your organization is located.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "State",
+          "name": "csr_state",
+          "type": "text",
+          "description": "Specify the state or province where your organization is based.",
+          "tooltip": "Specify the state or province where your organization is based.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Country",
+          "name": "csr_country",
+          "type": "text",
+          "description": "Specify the two-letter country code of your organization’s location (e.g., US).",
+          "tooltip": "Specify the two-letter country code of your organization’s location (e.g., US).",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Email Address",
+          "name": "csr_email",
+          "type": "text",
+          "description": "Specify the email address of your organization.",
+          "tooltip": "Specify the email address of your organization.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Validate CSR",
+      "operation": "validate_csr",
+      "description": "Validate a Certificate Signing Request (CSR).",
+      "category": "investigation",
+      "annotation": "validate_csr",
+      "output_schema": {
+        "csrResult": {
+          "CN": "",
+          "C": "",
+          "OU": "",
+          "O": "",
+          "L": "",
+          "S": "",
+          "version": "",
+          "Email": "",
+          "dnsName(s)": "",
+          "Key Size": "",
+          "md5": "",
+          "sha1": "",
+          "sha256": "",
+          "errorMessage": ""
+        },
+        "success": true
+      },
+      "parameters": [
+        {
+          "title": "Certificate Signing Request (CSR)",
+          "name": "csr",
+          "type": "text",
+          "description": "Specify the CSR to be validated, provided in PEM format.",
+          "tooltip": "Specify the CSR to be validated, provided in PEM format.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Decode CSR",
+      "operation": "decode_csr",
+      "description": "Decode a Certificate Signing Request (CSR).",
+      "category": "investigation",
+      "annotation": "decode_csr",
+      "output_schema": {
+        "csrResult": {
+          "CN": "",
+          "C": "",
+          "OU": "",
+          "O": "",
+          "L": "",
+          "S": "",
+          "version": "",
+          "Email": "",
+          "dnsName(s)": "",
+          "Key Size": "",
+          "md5": "",
+          "sha1": "",
+          "sha256": "",
+          "errorMessage": ""
+        },
+        "success": true
+      },
+      "parameters": [
+        {
+          "title": "Certificate Signing Request (CSR)",
+          "name": "csr",
+          "type": "text",
+          "description": "Specify the CSR to be encoded, provided in PEM format.",
+          "tooltip": "Specify the CSR to be encoded, provided in PEM format.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add SSL Order",
+      "operation": "add_ssl_order",
+      "description": "Add an SSL certificate order in GOGETSSL",
+      "category": "investigation",
+      "annotation": "add_ssl_order",
+      "output_schema": {
+        "product_id": "",
+        "approver_method": {
+          "http": {
+            "link": "",
+            "filename": "",
+            "content": ""
+          }
+        },
+        "order_id": "",
+        "invoice_id": "",
+        "order_status": "",
+        "success": "",
+        "san": [
+          {
+            "san_name": "",
+            "validation_method": "",
+            "status": 1,
+            "status_description": "",
+            "validation": {
+              "http": {
+                "link": "",
+                "filename": "",
+                "content": ""
+              }
+            }
+          }
+        ],
+        "order_amount": "",
+        "currency": "",
+        "tax": "",
+        "tax_rate": ""
+      },
+      "parameters": [
+        {
+          "title": "Product ID",
+          "name": "product_id",
+          "type": "text",
+          "description": "Specify the unique identifier of the SSL product being ordered.",
+          "tooltip": "Specify the unique identifier of the SSL product being ordered.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Certificate Signing Request (CSR)",
+          "name": "csr",
+          "type": "text",
+          "description": "Specify the Certificate Signing Request (CSR) in PEM format.",
+          "tooltip": "Specify the Certificate Signing Request (CSR) in PEM format.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Server Count",
+          "name": "server_count",
+          "type": "integer",
+          "description": "Specify the number of servers or domains that an SSL certificate should cover.",
+          "tooltip": "Specify the number of servers or domains that an SSL certificate should cover.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Period",
+          "name": "period",
+          "type": "integer",
+          "description": "Specify the number of years for which the SSL certificate will be valid.",
+          "tooltip": "Specify the number of years for which the SSL certificate will be valid.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Web Server Type",
+          "name": "webserver_type",
+          "type": "text",
+          "description": "Specifies the type of web server for which the SSL certificate is being ordered.",
+          "tooltip": "Specifies the type of web server for which the SSL certificate is being ordered.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify any additional fields required for the use case, and provide them in JSON format.",
+          "tooltip": "Specify any additional fields required for the use case, and provide them in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Reissue SSL Order",
+      "operation": "reissue_ssl_order",
+      "description": "Request a reissue of an existing SSL certificate.",
+      "category": "investigation",
+      "annotation": "reissue_ssl_order",
+      "output_schema": {
+        "product_id": "",
+        "additional_domains_count": "",
+        "additional_domains_price": "",
+        "approvalEmails": [],
+        "validation": {
+          "dns": {
+            "record": ""
+          }
+        },
+        "order_id": "",
+        "order_status": "",
+        "success": ""
+      },
+      "parameters": [
+        {
+          "title": "Order ID",
+          "name": "order_id",
+          "type": "text",
+          "description": "Specify the ID of the order that uniquely identifies the SSL certificate associated with the order you wish to reissue.",
+          "tooltip": "Specify the ID of the order that uniquely identifies the SSL certificate associated with the order you wish to reissue.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Certificate Signing Request (CSR)",
+          "name": "csr",
+          "type": "text",
+          "description": "Specify the Certificate Signing Request (CSR) is a base64-encoded string that contains information required to create a new SSL certificate.",
+          "tooltip": "Specify the Certificate Signing Request (CSR) is a base64-encoded string that contains information required to create a new SSL certificate.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Web Server Type",
+          "name": "webserver_type",
+          "type": "text",
+          "description": "Specify the type of web server that the reissued SSL certificate.",
+          "tooltip": "Specify the type of web server that the reissued SSL certificate.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "DCV Method",
+          "name": "dcv_method",
+          "type": "text",
+          "description": "Specify the method used to validate domain control as part of the SSL certificate reissue process",
+          "tooltip": "Specify the method used to validate domain control as part of the SSL certificate reissue process",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "DNS Names",
+          "name": "dns_names",
+          "type": "text",
+          "description": "Specify the CSV list of domain names or subdomains that you want to include in the reissued SSL certificate.",
+          "tooltip": "Specify the CSV list of domain names or subdomains that you want to include in the reissued SSL certificate.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Approver Emails",
+          "name": "approver_emails",
+          "type": "text",
+          "description": "Specifies the email addresses of the individuals who are authorized to approve the reissue of the SSL certificate.",
+          "tooltip": "Specifies the email addresses of the individuals who are authorized to approve the reissue of the SSL certificate.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Approver Email",
+          "name": "approver_email",
+          "type": "text",
+          "description": "Specifies the email address of the individual who will receive the approval request for the SSL certificate reissue.",
+          "tooltip": "Specifies the email address of the individual who will receive the approval request for the SSL certificate reissue.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Signature Hash",
+          "name": "signature_hash",
+          "type": "text",
+          "description": "Specifies the hashing algorithm used to sign the Certificate Signing Request (CSR). ",
+          "tooltip": "Specifies the hashing algorithm used to sign the Certificate Signing Request (CSR). ",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify any additional fields required for the use case, and provide them in JSON format.",
+          "tooltip": "Specify any additional fields required for the use case, and provide them in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add SSL Renew Order",
+      "operation": "add_ssl_renew_order",
+      "description": "Renewal process for an existing SSL certificate.",
+      "category": "investigation",
+      "annotation": "add_ssl_renew_order",
+      "output_schema": {
+        "product_id": "",
+        "approver_method": {
+          "http": {
+            "link": "",
+            "filename": "",
+            "content": ""
+          }
+        },
+        "order_id": "",
+        "invoice_id": "",
+        "order_status": "",
+        "success": "",
+        "san": [
+          {
+            "san_name": "",
+            "validation_method": "",
+            "status": 1,
+            "status_description": "",
+            "validation": {
+              "http": {
+                "link": "",
+                "filename": "",
+                "content": ""
+              }
+            }
+          }
+        ],
+        "order_amount": "",
+        "currency": "",
+        "tax": "",
+        "tax_rate": ""
+      },
+      "parameters": [
+        {
+          "title": "Product ID",
+          "name": "product_id",
+          "type": "text",
+          "description": "Specify the product ID for which the SSL certificate is being renewed.",
+          "tooltip": "Specify the product ID for which the SSL certificate is being renewed.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Certificate Signing Request (CSR)",
+          "name": "csr",
+          "type": "text",
+          "description": "Specify the CSR (Certificate Signing Request) encoded text for the certificate you want to renew.",
+          "tooltip": "Specify the CSR (Certificate Signing Request) encoded text for the certificate you want to renew.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Server Count",
+          "name": "server_count",
+          "type": "integer",
+          "description": "Specify the number of servers or instances that will use the SSL certificate being renewed.",
+          "tooltip": "Specify the number of servers or instances that will use the SSL certificate being renewed.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Period",
+          "name": "period",
+          "type": "integer",
+          "description": "Specifies the validity duration of the renewed SSL certificate.",
+          "tooltip": "Specifies the validity duration of the renewed SSL certificate.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Approver Emails",
+          "name": "approver_emails",
+          "type": "text",
+          "description": "Specifies the email addresses of the individuals who are authorized to approve the renew of the SSL certificate.",
+          "tooltip": "Specifies the email addresses of the individuals who are authorized to approve the renew of the SSL certificate.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify any additional fields required for the use case, and provide them in JSON format.",
+          "tooltip": "Specify any additional fields required for the use case, and provide them in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add SSL SAN Order",
+      "operation": "add_ssl_san_order",
+      "description": "Add an SSL certificate with Subject Alternative Names (SANs) to secure multiple domains or subdomains with a single certificate, ideal for Multi-Domain (MD) or Unified Communications (UCC) use.",
+      "category": "investigation",
+      "annotation": "add_ssl_san_order",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Order ID",
+          "name": "order_id",
+          "type": "text",
+          "description": "Specify the order ID for which you want to add an SSL certificate with Subject Alternative Names (SANs).",
+          "tooltip": "Specify the order ID for which you want to add an SSL certificate with Subject Alternative Names (SANs).",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Wildcard SAN Count",
+          "name": "wildcard_san_count",
+          "type": "text",
+          "description": "Specify the number of wildcard SANs (e.g., *.example.com) to be included in the certificate.",
+          "tooltip": "Specify the number of wildcard SANs (e.g., *.example.com) to be included in the certificate.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Single SAN Count",
+          "name": "single_san_count",
+          "type": "integer",
+          "description": "Specify the number of single SANs (e.g., www.example.com) to be included in the certificate.",
+          "tooltip": "Specify the number of single SANs (e.g., www.example.com) to be included in the certificate.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Cancel Order",
+      "operation": "cancel_order",
+      "description": "Cancel a previously placed SSL certificate order.",
+      "category": "investigation",
+      "annotation": "cancel_order",
+      "output_schema": {
+        "message": "",
+        "success": ""
+      },
+      "parameters": [
+        {
+          "title": "Order ID",
+          "name": "order_id",
+          "type": "text",
+          "description": "Specify the unique identifier of the SSL certificate order that you want to cancel.",
+          "tooltip": "Specify the unique identifier of the SSL certificate order that you want to cancel.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Reason",
+          "name": "reason",
+          "type": "text",
+          "description": "Specify the reason for why the SSL certificate order is being canceled.",
+          "tooltip": "Specify the reason for why the SSL certificate order is being canceled.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
