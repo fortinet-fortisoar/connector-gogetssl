@@ -52,7 +52,7 @@
 <table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get Domain Alternative</td><td>Retrieve information about alternative domain names associated with a specific SSL/TLS certificate.</td><td>get_domain_alternative <br/>Investigation</td></tr>
 <tr><td>Get Domain Emails</td><td>Retrieve email addresses associated with a specific domain.</td><td>get_domain_emails <br/>Investigation</td></tr>
 <tr><td>Get Domain Emails for Geo Trust</td><td>Retrieve email addresses associated with a domain specifically for GeoTrust SSL certificates.</td><td>get_domain_emails_for_geo_trust <br/>Investigation</td></tr>
-<tr><td>Get Domain from Whois</td><td>Retrieve WHOIS information for a specific domain.</td><td>get_domain_from_whois <br/>Investigation</td></tr>
+<tr><td>Get Domain from Whois</td><td>Retrieve an array of valid approver email addresses for specified domain.</td><td>get_domain_from_whois <br/>Investigation</td></tr>
 <tr><td>Get All Products</td><td>Retrieve all products from GOGETSSL.</td><td>get_all_products <br/>Investigation</td></tr>
 <tr><td>Get Product Details</td><td>Retrieving details of a specific product from GOGETSSL.</td><td>get_product_details <br/>Investigation</td></tr>
 <tr><td>Get Orders Metadata</td><td>Retrieves common details about the order's status and associated metadata, helping you track and manage your SSL certificate orders.</td><td>get_orders_metadata <br/>Investigation</td></tr>

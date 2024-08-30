@@ -149,7 +149,7 @@
     {
       "title": "Get Domain from Whois",
       "operation": "get_domain_from_whois",
-      "description": "Retrieve WHOIS information for a specific domain.",
+      "description": "Retrieve an array of valid approver email addresses for specified domain.",
       "category": "investigation",
       "annotation": "get_domain_from_whois",
       "output_schema": {
