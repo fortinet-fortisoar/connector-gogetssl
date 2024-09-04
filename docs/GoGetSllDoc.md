@@ -51,8 +51,8 @@
 
 <table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get Domain Alternative</td><td>Retrieve information about alternative domain names associated with a specific SSL/TLS certificate.</td><td>get_domain_alternative <br/>Investigation</td></tr>
 <tr><td>Get Domain Emails</td><td>Retrieve email addresses associated with a specific domain.</td><td>get_domain_emails <br/>Investigation</td></tr>
-<tr><td>Get Domain Emails for Geo Trust</td><td>Retrieve email addresses associated with a domain specifically for GeoTrust SSL certificates.</td><td>get_domain_emails_for_geo_trust <br/>Investigation</td></tr>
-<tr><td>Get Domain from Whois</td><td>Retrieve an array of valid approver email addresses for specified domain.</td><td>get_domain_from_whois <br/>Investigation</td></tr>
+<tr><td>Get Geotrust Approval Emails</td><td>Retrieve email addresses associated with a domain specifically for GeoTrust SSL certificates.</td><td>get_domain_emails_for_geo_trust <br/>Investigation</td></tr>
+<tr><td>Get Approver Emails</td><td>Retrieve an array of valid approver email addresses for specified domain.</td><td>get_domain_from_whois <br/>Investigation</td></tr>
 <tr><td>Get All Products</td><td>Retrieve all products from GOGETSSL.</td><td>get_all_products <br/>Investigation</td></tr>
 <tr><td>Get Product Details</td><td>Retrieving details of a specific product from GOGETSSL.</td><td>get_product_details <br/>Investigation</td></tr>
 <tr><td>Get Orders Metadata</td><td>Retrieves common details about the order's status and associated metadata, helping you track and manage your SSL certificate orders.</td><td>get_orders_metadata <br/>Investigation</td></tr>
@@ -73,7 +73,7 @@
 
 <h4>Input parameters</h4>
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Certificate Signing Request (CSR)</td><td>Provide Certificate Signing Request (CSR) is a block of encoded text used to retrieve information about alternative domain names associated with a specific SSL/TLS certificate.</td></tr>
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Provide Certificate Signing Request (CSR) to retrieve alternative domain names for your SSL/TLS certificate.</td></tr>
 </tbody></table>
 
 <h4>Output</h4>
@@ -127,7 +127,7 @@
     "success": ""
 }</pre>
 
-<h3>operation: Get Domain Emails for Geo Trust</h3>
+<h3>operation: Get Geotrust Approval Emails</h3>
 
 <h4>Input parameters</h4>
 
@@ -143,11 +143,11 @@
     "success": ""
 }</pre>
 
-<h3>operation: Get Domain from Whois</h3>
+<h3>operation: Get Approver Emails</h3>
 
 <h4>Input parameters</h4>
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Domain</td><td>Specify the domain for which WHOIS information is requested.</td></tr>
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Domain</td><td>Specify the domain to retrieve an array of valid approver email addresses.</td></tr>
 </tbody></table>
 
 <h4>Output</h4>
@@ -198,7 +198,7 @@
 
 <h4>Input parameters</h4>
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Product ID</td><td>Specify the ID of the product which you want to retrieve information of product.</td></tr>
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Product ID</td><td>Specify the product ID for which you want to retrieve detailed information.</td></tr>
 </tbody></table>
 
 <h4>Output</h4>
@@ -362,7 +362,7 @@
 
 <h4>Input parameters</h4>
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>CIDs</td><td>Specify the CSV of CIDs for which you want to retrieve detailed information.</td></tr>
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>CIDs</td><td>Specify the CSV of CIDs for which you want to retrieve the status.</td></tr>
 </tbody></table>
 
 <h4>Output</h4>
@@ -396,7 +396,7 @@
 
 <h4>Input parameters</h4>
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Common Name</td><td>Specify the fully qualified domain name (FQDN) that you want the certificate.</td></tr>
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Common Name</td><td>Specify the fully qualified domain name (FQDN) for which the certificate is being requested.</td></tr>
 <tr><td>Organization Name</td><td>Specify the name of your organization.</td></tr>
 <tr><td>Department</td><td>Specify the division or department within your organization.</td></tr>
 <tr><td>City</td><td>Specify the city where your organization is located.</td></tr>
@@ -450,7 +450,7 @@
 
 <h4>Input parameters</h4>
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Certificate Signing Request (CSR)</td><td>Specify the CSR to be encoded, provided in PEM format.</td></tr>
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Certificate Signing Request (CSR)</td><td>Specify the CSR to be decoded, provided in PEM format.</td></tr>
 </tbody></table>
 
 <h4>Output</h4>
@@ -532,8 +532,8 @@
 <h4>Input parameters</h4>
 
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Order ID</td><td>Specify the ID of the order that uniquely identifies the SSL certificate associated with the order you wish to reissue.</td></tr>
-<tr><td>Certificate Signing Request (CSR)</td><td>Specify the Certificate Signing Request (CSR) is a base64-encoded string that contains information required to create a new SSL certificate.</td></tr>
-<tr><td>Web Server Type</td><td>Specify the type of web server that the reissued SSL certificate.</td></tr>
+<tr><td>Certificate Signing Request (CSR)</td><td>Specify the Certificate Signing Request (CSR) to create a new SSL certificate.</td></tr>
+<tr><td>Web Server Type</td><td>Specify the type of web server for which the SSL certificate will be reissued.</td></tr>
 <tr><td>DCV Method</td><td>Specify the method used to validate domain control as part of the SSL certificate reissue process</td></tr>
 <tr><td>DNS Names</td><td>Specify the CSV list of domain names or subdomains that you want to include in the reissued SSL certificate.</td></tr>
 <tr><td>Approver Emails</td><td>(Optional) Specifies the email addresses of the individuals who are authorized to approve the reissue of the SSL certificate.</td></tr>
@@ -566,7 +566,7 @@
 <h4>Input parameters</h4>
 
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Product ID</td><td>Specify the product ID for which the SSL certificate is being renewed.</td></tr>
-<tr><td>Certificate Signing Request (CSR)</td><td>Specify the CSR (Certificate Signing Request) encoded text for the certificate you want to renew.</td></tr>
+<tr><td>Certificate Signing Request (CSR)</td><td>Specify the CSR (Certificate Signing Request) for the certificate you want to renew.</td></tr>
 <tr><td>Server Count</td><td>Specify the number of servers or instances that will use the SSL certificate being renewed.</td></tr>
 <tr><td>Period</td><td>Specifies the validity duration of the renewed SSL certificate.</td></tr>
 <tr><td>Approver Emails</td><td>Specifies the email addresses of the individuals who are authorized to approve the renew of the SSL certificate.</td></tr>
@@ -629,7 +629,7 @@
 <h4>Input parameters</h4>
 
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Order ID</td><td>Specify the unique identifier of the SSL certificate order that you want to cancel.</td></tr>
-<tr><td>Reason</td><td>(Optional) Specify the reason for why the SSL certificate order is being canceled.</td></tr>
+<tr><td>Reason</td><td>(Optional) Specify the reason why the SSL certificate order is being canceled.</td></tr>
 </tbody></table>
 
 <h4>Output</h4>
@@ -656,8 +656,8 @@
 <li>Get All Products</li>
 <li>Get Domain Alternative</li>
 <li>Get Domain Emails</li>
-<li>Get Domain Emails for Geo Trust</li>
-<li>Get Domain from Whois</li>
+<li>Get Geotrust Approval Emails</li>
+<li>Get Approver Emails</li>
 <li>Get Orders Details</li>
 <li>Get Orders Metadata</li>
 <li>Get Product Details</li>
