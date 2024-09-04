@@ -124,7 +124,7 @@
     {
       "title": "Get Geotrust Approval Emails",
       "operation": "get_domain_emails_for_geo_trust",
-      "description": "Retrieve email addresses associated with a domain specifically for GeoTrust SSL certificates.",
+      "description": "Retrieve an array of valid Geotrust approver email addresses for specified domain.",
       "category": "investigation",
       "annotation": "get_geotrust_approval_emails",
       "output_schema": {
@@ -151,7 +151,7 @@
       "operation": "get_domain_from_whois",
       "description": "Retrieve an array of valid approver email addresses for specified domain.",
       "category": "investigation",
-      "annotation": "get_domain_from_whois",
+      "annotation": "get_approver_emails",
       "output_schema": {
         "ComodoApprovalEmails": [],
         "GeotrustApprovalEmails": [],
