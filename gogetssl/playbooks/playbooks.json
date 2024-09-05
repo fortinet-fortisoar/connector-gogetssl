@@ -174,8 +174,8 @@
           "uuid": "899c4239-283a-45f6-a41b-0e36d85de13d",
           "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
           "triggerLimit": null,
-          "description": "Retrieve email addresses associated with a domain specifically for GeoTrust SSL certificates.",
-          "name": "Get Domain Emails for Geo Trust",
+          "description": "Retrieve an array of valid Geotrust approver email addresses for specified domain.",
+          "name": "Get Geotrust Approval Emails",
           "tag": "#GOGETSSL",
           "recordTags": [
             "Gogetssl",
@@ -196,7 +196,7 @@
               "status": null,
               "arguments": {
                 "route": "93fddb4e-5ac3-406a-86f1-c77c2c5cce3e",
-                "title": "GOGETSSL: Get Domain Emails for Geo Trust",
+                "title": "GOGETSSL: Get Geotrust Approval Emails",
                 "resources": [
                   "alerts"
                 ],
@@ -217,7 +217,7 @@
             {
               "uuid": "bb482452-6853-4a0a-a64b-188d50d93005",
               "@type": "WorkflowStep",
-              "name": "Get Domain Emails for Geo Trust",
+              "name": "Get Geotrust Approval Emails",
               "description": null,
               "status": null,
               "arguments": {
@@ -227,7 +227,7 @@
                 "version": "1.0.0",
                 "connector": "GOGETSSL",
                 "operation": "get_domain_emails_for_geo_trust",
-                "operationTitle": "Get Domain Emails for Geo Trust",
+                "operationTitle": "Get Geotrust Approval Emails",
                 "step_variables": {}
               },
               "left": "188",
@@ -241,7 +241,7 @@
               "uuid": "e442d18c-12f2-4ead-9148-46cf452eba82",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Domain Emails for Geo Trust",
+              "name": "Start-> Get Geotrust Approval Emails",
               "sourceStep": "/api/3/workflow_steps/870254ea-aa52-4e6d-99c7-2643ff8c4c95",
               "targetStep": "/api/3/workflow_steps/bb482452-6853-4a0a-a64b-188d50d93005"
             }
@@ -252,8 +252,8 @@
           "uuid": "ed85d52e-e00e-4a83-b28b-e838a3e1f2f5",
           "collection": "/api/3/workflow_collections/7fb2c28e-6457-45a7-a416-9171837e547b",
           "triggerLimit": null,
-          "description": "Retrieve WHOIS information for a specific domain.",
-          "name": "Get Domain from Whois",
+          "description": "Retrieve an array of valid approver email addresses for specified domain.",
+          "name": "Get Approver Emails",
           "tag": "#GOGETSSL",
           "recordTags": [
             "Gogetssl",
@@ -274,7 +274,7 @@
               "status": null,
               "arguments": {
                 "route": "5fe8a077-d56b-4217-9c23-2ef5f7a166f1",
-                "title": "GOGETSSL: Get Domain from Whois",
+                "title": "GOGETSSL: Get Approver Emails",
                 "resources": [
                   "alerts"
                 ],
@@ -295,7 +295,7 @@
             {
               "uuid": "13d76718-9c71-47e2-81e9-803bbc447adf",
               "@type": "WorkflowStep",
-              "name": "Get Domain from Whois",
+              "name": "Get Approver Emails",
               "description": null,
               "status": null,
               "arguments": {
@@ -305,7 +305,7 @@
                 "version": "1.0.0",
                 "connector": "GOGETSSL",
                 "operation": "get_domain_from_whois",
-                "operationTitle": "Get Domain from Whois",
+                "operationTitle": "Get Approver Emails",
                 "step_variables": {}
               },
               "left": "188",
@@ -319,7 +319,7 @@
               "uuid": "1a178d2b-47e6-430a-8c22-c163812e16e7",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Get Domain from Whois",
+              "name": "Start-> Get Approver Emails",
               "sourceStep": "/api/3/workflow_steps/a6faa5e7-4093-4bc2-9dbd-1b5ac550f03c",
               "targetStep": "/api/3/workflow_steps/13d76718-9c71-47e2-81e9-803bbc447adf"
             }
